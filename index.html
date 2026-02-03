@@ -3,84 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Just One Question 💖</title>
+<title>Say Yes 💖</title>
 
 <style>
-* {
+*{
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(180deg, #ff9a9e, #fad0c4);
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body{
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: "Poppins", sans-serif;
 }
 
-.card {
-  width: 92%;
+.card{
+  width: 90%;
   max-width: 360px;
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 25px 20px 30px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  animation: pop 0.5s ease;
+  background:white;
+  padding:25px;
+  border-radius:24px;
+  text-align:center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-@keyframes pop {
-  0% { transform: scale(0.9); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+h1{
+  font-size:26px;
+  margin-bottom:25px;
 }
 
-h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
+.buttons{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
 }
 
-p {
-  font-size: 25px;
-  color: #555;
-  margin-bottom: 25px;
+button{
+  flex:1;
+  padding:14px 0;
+  font-size:18px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  transition: all 0.25s ease;
 }
 
-.buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
+#yes{
+  background:#ff4d6d;
+  color:white;
 }
 
-button {
-  flex: 1;
-  padding: 14px 0;
-  font-size: 18px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: 0.2s;
+#yes:active{
+  transform:scale(0.95);
 }
 
-#yes {
-  background: #ff4d6d;
-  color: white;
+#no{
+  background:#eaeaea;
+  position:relative;
 }
 
-#yes:active {
-  transform: scale(0.95);
-}
-
-#no {
-  background: #e0e0e0;
-}
-
-.result {
-  margin-top: 25px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff4d6d;
+.result{
+  font-size:22px;
+  line-height:1.5;
 }
 </style>
 </head>
@@ -88,44 +76,34 @@ button {
 <body>
 
 <div class="card" id="card">
-  <h1>Can I be yours? 💕</h1>
-  <p>I promise i'll never leave you FiFi💗, 
-  please accept FiFi🫣🙏</p>
+  <h1>Will you be mine FiFi? 💕</h1>
 
   <div class="buttons">
-    <button id="yes" onclick="yesClick()">YES 💖</button>
-    <button id="no" onclick="moveNo()">NO 🙃</button>
+    <button id="yes" onclick="yesClick()">YES</button>
+    <button id="no" onclick="moveNo()">NO</button>
   </div>
-
-  <div class="result" id="result"></div>
 </div>
 
 <script>
-	function yesClick() {
-		document.getElementById("card").innerHTML = `
-    <h1>FiFi💗🫶
-
-    <img src="love.jpg"
-         style="
-           width:100%;
-           max-width:260px;
-           border-radius:100px;
-           margin:15px 0;
-           box-shadow:0 20px 25px rgba(0,0,0,0.2);
-         ">
-
-    <p>Best decision ever FiFi😘</p>
-    
-    <p>I love you so much FiFi💖</p>
+function yesClick(){
+  document.getElementById("card").innerHTML = `
+    <div class="result">
+      Best Decision Ever alfiya!🫣<br>
+      
+      Be My Forever FiFi💗<br>
+      
+      I Love You So Much FiFi💖<br>
+      Taste😘😘😘
+    </div>
   `;
-	}
-	
-	function moveNo() {
-		const noBtn = document.getElementById("no");
-		const x = Math.random() * 160 - 80;
-		const y = Math.random() * 160 - 80;
-		noBtn.style.transform = `translate(${x}px, ${y}px)`;
-	}
+}
+
+function moveNo(){
+  let x = Math.random()*120 - 60;
+  let y = Math.random()*120 - 60;
+  let no = document.getElementById("no");
+  no.style.transform = `translate(${x}px,${y}px)`;
+}
 </script>
 
 </body>
